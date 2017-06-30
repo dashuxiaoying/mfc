@@ -1,9 +1,9 @@
 package main
 
 import (
-	_ "myprj/routers"
+	_ "sys/routers"
 	"github.com/astaxie/beego"
-	_ "myprj/models"
+	_ "sys/models"
 )
 
 func main() {

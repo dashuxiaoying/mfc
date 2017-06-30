@@ -2,21 +2,15 @@ package routers
 
 import (
 	"github.com/astaxie/beego"
-	"myprj/controllers/user"
-	"myprj/controllers/home"
+	"sys/controllers/user"
+	"sys/controllers/home"
 	"github.com/astaxie/beego/context"
 	"net/http"
+	"sys/controllers/media"
+	"sys/controllers/order"
 )
 
 func init() {
-
-	//home
-	beego.Router("/", &home.HomeController{}, "get:GetIndex")
-
-	//user
-	beego.Router("/login", &user.UserController{}, "get:GetLogin;post:PostLogin")
-	beego.Router("/logout",&user.UserController{},"get:GetLogout")
-
 	//filter
 	var FilterUser = func(ctx *context.Context) {
 		islogin, _ := ctx.Input.Session("islogin").(int)
@@ -25,4 +19,18 @@ func init() {
 		}
 	}
 	beego.InsertFilter("/*", beego.BeforeRouter, FilterUser)
+
+	//home
+	beego.Router("/", &home.HomeController{}, "get:GetIndex")
+	beego.Router("/camera",&media.CameraControl{},"get:GetCamera")
+	beego.Router("/orders",&order.OrderController{},"get:GetOrders")
+	beego.Router("/orders/json",&order.OrderController{},"get:GetOrdersJson")
+
+	//user
+	beego.Router("/login", &user.UserController{}, "get:GetLogin;post:PostLogin")
+	beego.Router("/logout",&user.UserController{},"get:GetLogout")
+
+
+
+
 }

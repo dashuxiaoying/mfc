@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 	"github.com/astaxie/beego/orm"
-	"myprj/models"
+	"sys/models"
 )
 
 type UserController struct {
@@ -44,6 +44,7 @@ func (this *UserController) PostLogin() {
 }
 
 func (this *UserController)GetLogout(){
+	this.SetSession("islogin", int(0))
 	this.DestroySession()
 	this.Redirect("/login", http.StatusMovedPermanently)
 }
