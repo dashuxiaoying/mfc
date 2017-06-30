@@ -263,7 +263,7 @@
                         <a href="/"><i class="fa fa-dashboard fa-fw"></i> 主页</a>
                     </li>
                     <li>
-                        <a href="/orders"><i class="fa fa-edit fa-fw"></i> 表单</a>
+                        <a href="/orders"><i class="fa fa-edit fa-fw"></i> 称重管理</a>
                     </li>
                 </ul>
             </div>
