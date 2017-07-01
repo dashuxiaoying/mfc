@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">称重管理
-                <button class="btn btn-success pull-right" type="button" data-toggle="modal" data-target="#myModal">
+                <button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">
                     开始称重
                 </button>
             </h1>
@@ -28,11 +28,11 @@
                                             <input class="form-control" placeholder="请填写用户姓名">
                                         </div>
                                         <div class="form-group">
-                                            <label>毛重(kg)</label>
+                                            <label>毛重(kg):</label>
                                             <input class="form-control" readonly value="1000">
                                         </div>
                                         <div class="form-group">
-                                            <label>皮重(kg)</label>
+                                            <label>皮重(kg):</label>
                                             <input class="form-control" readonly value="500">
                                         </div>
                                         <div class="form-group">
@@ -41,15 +41,15 @@
 
                                         </div>
                                         <div class="form-group">
-                                            <label>净重(kg)</label>
+                                            <label>净重(kg):</label>
                                             <input class="form-control" readonly value="485">
                                         </div>
                                         <div class="form-group">
                                             <label>单价(元/500g):</label>
                                             <input class="form-control" value="1.02">
-
                                         </div>
-
+                                        <canvas id="canvas-gw" width="200" height="160"></canvas>
+                                        <canvas id="canvas-rt" width="200" height="160"></canvas>
                                     </form>
                                 </div>
                                 <div class="col-lg-4">
@@ -69,8 +69,6 @@
                                     <button id="snap-rt" class="btn btn-info btn-sm">取皮重</button>
                                     <button id="get-net" class="btn btn-success btn-sm">取净重</button>
                                     <video id="video" width="200" height="200" autoplay></video>
-                                    <canvas id="canvas-gw" width="200" height="160"></canvas>
-                                    <canvas id="canvas-rt" width="200" height="160"></canvas>
                                 </div>
                             </div>
 
@@ -104,10 +102,11 @@
                         <tr>
                             <th>姓名</th>
                             <th>单号</th>
-                            <th>毛重(kg)</th>
-                            <th>皮重(kg)</th>
-                            <th>净重(kg)</th>
+                            <th>毛重/皮重(kg)</th>
                             <th>扣杂</th>
+                            <th>净重(kg)</th>
+                            <th>单价(元/kg)</th>
+                            <th>状态</th>
                             <th>日期</th>
                             <th>操作</th>
 
@@ -117,10 +116,11 @@
                         <tr class="odd gradeX">
                             <td>耿舒</td>
                             <td>12321232</td>
-                            <td>1000</td>
-                            <td class="center">500</td>
-                            <td class="center">485</td>
+                            <td>1000/500</td>
                             <td class="center">3%</td>
+                            <td class="center">485</td>
+                            <td class="center">1.08</td>
+                            <td class="center"><code>未完成</code>&nbsp;<a href="#">称皮</a></td>
                             <td class="center">2017-06-05 12:33</td>
                             <td class="center">
                                 <a href="#">详情</a>
@@ -131,10 +131,11 @@
                         <tr class="even gradeX">
                             <td>李四</td>
                             <td>12321232</td>
-                            <td>1000</td>
-                            <td class="center">500</td>
-                            <td class="center">485</td>
+                            <td>1000/200</td>
                             <td class="center">3%</td>
+                            <td class="center">485</td>
+                            <td class="center">1.08</td>
+                            <td class="center"><code class="text-success">已完成</code></td>
                             <td class="center">2017-06-05 12:34</td>
                             <td class="center">
                                 <a href="#">详情</a>

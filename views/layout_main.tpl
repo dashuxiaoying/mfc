@@ -191,16 +191,24 @@
                         <a href="/"><i class="fa fa-dashboard fa-fw"></i> 主页</a>
                     </li>
                     <li>
-                        <a href="/orders"><i class="fa fa-download fa-fw"></i> 称重</a>
+                        <a href="/weight"><i class="fa fa-download fa-fw"></i> 称重</a>
                     </li>
                     <li>
                         <a href="/shop"><i class="fa fa-shopping-cart fa-fw"></i> 农户支取</a>
                     </li>
                     <li>
-                        <a href="/instorage"><i class="fa fa-sign-in  fa-fw"></i> 入库</a>
+                        <a href="#"><i class="fa fa-sign-in fa-fw"></i> 入库<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/stockin">入库管理</a>
+                            </li>
+                            <li>
+                                <a href="/supply">供货商管理</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="/outstorage"><i class="fa fa-truck  fa-fw"></i> 销售</a>
+                        <a href="/stockout"><i class="fa fa-truck  fa-fw"></i> 销售</a>
                     </li>
                     <li>
                         <a href="/statistic"><i class="fa fa-signal  fa-fw"></i> 统计报表</a>

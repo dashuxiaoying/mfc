@@ -15,3 +15,8 @@ func (this *StorageController)GetOutstorage(){
 	this.Layout = "layout_main.tpl"
 	this.TplName = "outstorage.tpl"
 }
+
+func (this *StorageController)GetSupplies(){
+	this.Layout="layout_main.tpl"
+	this.TplName = "supply.tpl"
+}

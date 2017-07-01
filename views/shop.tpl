@@ -21,10 +21,10 @@
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th>编号</th>
+                                <th>面本编号</th>
                                 <th>姓名</th>
-                                <th>余一粉(市斤)</th>
-                                <th>余麸皮(市斤)</th>
+                                <th>余一粉(kg)</th>
+                                <th>余麸皮(kg)</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
