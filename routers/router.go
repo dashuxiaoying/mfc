@@ -8,6 +8,8 @@ import (
 	"net/http"
 	"sys/controllers/media"
 	"sys/controllers/order"
+	"sys/controllers/shop"
+	"sys/controllers/storage"
 )
 
 func init() {
@@ -25,6 +27,9 @@ func init() {
 	beego.Router("/camera",&media.CameraControl{},"get:GetCamera")
 	beego.Router("/orders",&order.OrderController{},"get:GetOrders")
 	beego.Router("/orders/json",&order.OrderController{},"get:GetOrdersJson")
+	beego.Router("/shop",&shop.ShopController{},"get:GetCards")
+	beego.Router("/instorage",&storage.StorageController{},"get:GetInstorage")
+	beego.Router("/outstorage",&storage.StorageController{},"get:GetOutstorage")
 
 	//user
 	beego.Router("/login", &user.UserController{}, "get:GetLogin;post:PostLogin")

@@ -36,36 +36,50 @@
                                             <input class="form-control" readonly value="500">
                                         </div>
                                         <div class="form-group">
-                                            <label>扣杂:</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1%
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2%
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3%
-                                            </label>
+                                            <label>扣杂(%):</label>
+                                            <input class="form-control" value="3.0">
+
                                         </div>
                                         <div class="form-group">
                                             <label>净重(kg)</label>
-                                            <input class="form-control" readonly value="500">
+                                            <input class="form-control" readonly value="485">
                                         </div>
+                                        <div class="form-group">
+                                            <label>单价(元/500g):</label>
+                                            <input class="form-control" value="1.02">
 
+                                        </div>
 
                                     </form>
                                 </div>
                                 <div class="col-lg-4">
+                                    <div class="panel panel-green">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="col-xs-3">
+                                                    KG:
+                                                </div>
+                                                <div class="col-xs-9 text-right">
+                                                    <div class="huge">260</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button id="snap-gw" class="btn btn-warning btn-sm">取毛重</button>
+                                    <button id="snap-rt" class="btn btn-info btn-sm">取皮重</button>
+                                    <button id="get-net" class="btn btn-success btn-sm">取净重</button>
                                     <video id="video" width="200" height="200" autoplay></video>
-                                    <button id="snap" class="btn btn-success btn-sm">截屏</button>
-                                    <canvas id="canvas" width="200" height="160"></canvas>
+                                    <canvas id="canvas-gw" width="200" height="160"></canvas>
+                                    <canvas id="canvas-rt" width="200" height="160"></canvas>
                                 </div>
                             </div>
 
                         </div>
                         <div class="modal-footer">
+
+                            <button type="button" class="btn btn-primary">保存并打印</button>
+                            <button type="button" class="btn btn-primary">保存</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary">增加</button>
                         </div>
                     </div>
                     <!-- /.modal-content -->
