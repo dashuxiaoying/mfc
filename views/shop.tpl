@@ -29,27 +29,16 @@
                             </tr>
                             </thead>
                             <tbody>
+                            {{range .Users}}
                             <tr>
-                                <td>1</td>
-                                <td>张三</td>
-                                <td>100</td>
-                                <td>50</td>
+                                <td>{{.Uid}}</td>
+                                <td>{{.Username}}</td>
+                                <td>{{.SurplusFlour}}</td>
+                                <td>{{.SurplusBran}}</td>
                                 <td><a href="#">详情</a></td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>李四</td>
-                                <td>200</td>
-                                <td>100</td>
-                                <td><a href="#">详情</a></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>王五</td>
-                                <td>200</td>
-                                <td>100</td>
-                                <td><a href="#">详情</a></td>
-                            </tr>
+                            {{end}}
+
                             </tbody>
                         </table>
                         <div>

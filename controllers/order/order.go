@@ -13,7 +13,7 @@ type OrderController struct {
 func (this *OrderController) GetOrders() {
 	var orders []*models.Weight
 	o := orm.NewOrm()
-	qs := o.QueryTable("mfc_weight").RelatedSel()
+	qs := o.QueryTable(&models.Weight{}).RelatedSel()
 	qs.OrderBy("-insert_date")
 	qs.Limit(10, 20)
 	qs.All(&orders)

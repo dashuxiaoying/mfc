@@ -33,8 +33,8 @@ type User struct {
 	Uid           int       `orm:"auto;pk"`
 	Username      string
 	Phone         string
-	Surplus_flour int
-	Surplus_bran  int
+	SurplusFlour int
+	SurplusBran  int
 	Weights       []*Weight `orm:"reverse(many)"`
 }
 
