@@ -18,10 +18,6 @@ type User struct {
 	Pass string `form:"password"`
 }
 
-func init(){
-	orm.RegisterDriver("mysql", orm.DRMySQL)
-	orm.RegisterDataBase("default", "mysql", "root:buzhidao@tcp(192.168.1.100:3306)/MFC?charset=utf8&loc=Asia%2FShanghai")
-}
 
 func (this *UserController) GetLogin() {
 	this.Data["title"] = "login"

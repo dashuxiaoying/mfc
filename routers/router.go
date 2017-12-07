@@ -24,6 +24,7 @@ func init() {
 
 	//home
 	beego.Router("/", &home.HomeController{}, "get:GetIndex")
+	beego.Router("/", &home.HomeController{}, "get:GetIndex")
 	beego.Router("/camera",&media.CameraControl{},"get:GetCamera")
 	beego.Router("/weight",&order.OrderController{},"get:GetOrders")
 	beego.Router("/weight/json",&order.OrderController{},"get:GetOrdersJson")
