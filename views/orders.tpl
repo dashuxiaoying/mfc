@@ -113,35 +113,23 @@
                         </tr>
                         </thead>
                         <tbody>
+                        {{range .Orders}}
                         <tr class="odd gradeX">
-                            <td>耿舒</td>
-                            <td>12321232</td>
-                            <td>1000/500</td>
-                            <td class="center">3%</td>
-                            <td class="center">485</td>
-                            <td class="center">1.08</td>
+                            <td>{{.User.Username}}</td>
+                            <td>{{.Wid}}</td>
+                            <td>{{.GrossWeight}}/{{minus .GrossWeight .NetWeight}}</td>
+                            <td class="center">{{.Ratio}}‰</td>
+                            <td class="center">{{.NetWeight}}</td>
+                            <td class="center">{{.Price}}</td>
                             <td class="center"><code>未完成</code>&nbsp;<a href="#">称皮</a></td>
-                            <td class="center">2017-06-05 12:33</td>
+                            <td class="center">{{date .InsertDate "Y-m-d H:i"}}</td>
                             <td class="center">
                                 <a href="#">详情</a>
                             </td>
-
                         </tr>
+                        {{end}}
 
-                        <tr class="even gradeX">
-                            <td>李四</td>
-                            <td>12321232</td>
-                            <td>1000/200</td>
-                            <td class="center">3%</td>
-                            <td class="center">485</td>
-                            <td class="center">1.08</td>
-                            <td class="center"><code class="text-success">已完成</code></td>
-                            <td class="center">2017-06-05 12:34</td>
-                            <td class="center">
-                                <a href="#">详情</a>
-                            </td>
 
-                        </tr>
                         </tbody>
                     </table>
                     <!-- /.table-responsive -->

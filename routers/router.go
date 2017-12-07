@@ -24,14 +24,16 @@ func init() {
 
 	//home
 	beego.Router("/", &home.HomeController{}, "get:GetIndex")
-	beego.Router("/", &home.HomeController{}, "get:GetIndex")
+
 	beego.Router("/camera",&media.CameraControl{},"get:GetCamera")
 	beego.Router("/weight",&order.OrderController{},"get:GetOrders")
 	beego.Router("/weight/json",&order.OrderController{},"get:GetOrdersJson")
+
 	beego.Router("/shop",&shop.ShopController{},"get:GetCards")
 
 	beego.Router("/stockin",&storage.StorageController{},"get:GetInstorage")
 	beego.Router("/stockout",&storage.StorageController{},"get:GetOutstorage")
+
 	beego.Router("/supply",&storage.StorageController{},"get:GetSupplies")
 
 	//user
