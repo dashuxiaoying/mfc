@@ -4,6 +4,7 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"sys/models"
+	"fmt"
 )
 
 type StorageController struct {
@@ -13,10 +14,11 @@ type StorageController struct {
 func (this *StorageController) GetInstorage() {
 	var stockins []*models.Stockin
 	o := orm.NewOrm()
-	qs := o.QueryTable(&models.Stockin{})
+	qs := o.QueryTable(&models.Stockin{}).RelatedSel()
 	qs.OrderBy("-insert_date")
-	qs.Limit(10, 20)
-	qs.All(&stockins)
+	qs.Limit(10)
+	_,e:=qs.All(&stockins)
+	fmt.Print(e)
 
 	this.Data["Stockins"] = stockins
 	this.Layout = "layout_main.tpl"
@@ -28,7 +30,7 @@ func (this *StorageController) GetOutstorage() {
 	o := orm.NewOrm()
 	qs := o.QueryTable(&models.Stockout{})
 	qs.OrderBy("-insert_date")
-	qs.Limit(10, 20)
+	qs.Limit(10)
 	qs.All(&stockouts)
 
 	this.Data["Stockouts"] = stockouts
@@ -41,7 +43,7 @@ func (this *StorageController) GetSupplies() {
 	o := orm.NewOrm()
 	qs := o.QueryTable(&models.Supply{})
 	qs.OrderBy("-insert_date")
-	qs.Limit(10, 20)
+	qs.Limit(10)
 	qs.All(&suppliers)
 
 	this.Data["Suppliers"] = suppliers

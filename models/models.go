@@ -39,12 +39,11 @@ type User struct {
 }
 
 type Stockin struct {
-	StId       int     `orm:"auto;pk"`
-	StUsername string
-	StCategory int
-	StWeight   int
-	StPrice    int
-	StTotal    int
+	Sid       int     `orm:"auto;pk"`
+	Category int
+	Weight   int
+	Price    int
+	Total    int
 	Checkout   int
 	InsertDate time.Time
 	UpdateDate time.Time

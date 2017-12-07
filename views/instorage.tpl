@@ -117,39 +117,19 @@
                             </tr>
                             </thead>
                             <tbody>
+                            {{range .Stockins}}
                             <tr>
-                                <td>1</td>
-                                <td>张三</td>
-                                <td>大米</td>
-                                <td>500</td>
-                                <td>1.0</td>
-                                <td>500.0</td>
-                                <td>2017-07-01 12:20</td>
+                                <td>{{.Sid}}</td>
+                                <td>{{.Supply.SpName}}</td>
+                                <td>{{.Category}}</td>
+                                <td>{{.Weight}}</td>
+                                <td>{{.Price}}</td>
+                                <td>{{.Total}}</td>
+                                <td>{{.InsertDate}}</td>
                                 <td><code class="text-success">已结</code></td>
                                 <td><a href="#">删除</a></td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>张三</td>
-                                <td>面条</td>
-                                <td>500</td>
-                                <td>1.5</td>
-                                <td>500.0</td>
-                                <td>2017-07-01 12:20</td>
-                                <td><code>未结</code></td>
-                                <td><a href="#">删除</a></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>张三</td>
-                                <td>麸皮</td>
-                                <td>500</td>
-                                <td>2.0</td>
-                                <td>100.0</td>
-                                <td>2017-07-01 12:20</td>
-                                <td><code class="text-success">已结</code></td>
-                                <td><a href="#">删除</a></td>
-                            </tr>
+                            {{end}}
                             </tbody>
                         </table>
                         <div>

@@ -109,39 +109,19 @@
                             </tr>
                             </thead>
                             <tbody>
+                            {{range .Stockouts}}
                             <tr>
-                                <td>1</td>
+                                <td>{{.StId}}</td>
                                 <td>张三</td>
-                                <td>小麦</td>
-                                <td>50000</td>
-                                <td>1.02</td>
-                                <td>50000</td>
-                                <td>2017-07-01 12:20</td>
+                                <td>{{.StCategory}}</td>
+                                <td>{{.StWeight}}</td>
+                                <td>{{.StPrice}}</td>
+                                <td>{{.StTotal}}</td>
+                                <td>{{.InsertDate}}</td>
                                 <td><code>未支付</code></td>
                                 <td><a href="#">详情</a></td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>张三</td>
-                                <td>面条</td>
-                                <td>50</td>
-                                <td>2.40</td>
-                                <td>50</td>
-                                <td>2017-07-01 12:20</td>
-                                <td><code>未支付</code></td>
-                                <td><a href="#">详情</a></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>张三</td>
-                                <td>麸皮</td>
-                                <td>500</td>
-                                <td>1.34</td>
-                                <td>500</td>
-                                <td>2017-07-01 12:20</td>
-                                <td><code class="text-success">已支付</code></td>
-                                <td><a href="#">详情</a></td>
-                            </tr>
+                           {{end}}
                             </tbody>
                         </table>
                         <div>
