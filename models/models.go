@@ -30,12 +30,44 @@ type Weight struct {
 }
 
 type User struct {
-	Uid           int       `orm:"auto;pk"`
-	Username      string
-	Phone         string
+	Uid          int       `orm:"auto;pk"`
+	Username     string
+	Phone        string
 	SurplusFlour int
 	SurplusBran  int
-	Weights       []*Weight `orm:"reverse(many)"`
+	Weights      []*Weight `orm:"reverse(many)"`
+}
+
+type Stockin struct {
+	StId       int     `orm:"auto;pk"`
+	StUsername string
+	StCategory int
+	StWeight   int
+	StPrice    int
+	StTotal    int
+	Checkout   int
+	InsertDate time.Time
+	UpdateDate time.Time
+	Supply     *Supply `orm:"rel(fk)"`
+}
+type Stockout struct {
+	StId       int `orm:"auto;pk"`
+	StUsername string
+	StCategory int
+	StWeight   int
+	StPrice    int
+	StTotal    int
+	Checkout   int
+	InsertDate time.Time
+	UpdateDate time.Time
+}
+
+type Supply struct {
+	SpId       int `orm:"auto;pk"`
+	SpName     string
+	SpPhone    string
+	Remark     string
+	InsertDate time.Time
 }
 
 func init() {
@@ -45,5 +77,5 @@ func init() {
 	mysqldb := beego.AppConfig.String("mysqldb")
 	orm.RegisterDriver("mysql", orm.DRMySQL)
 	orm.RegisterDataBase("default", "mysql", mysqluser+":"+mysqlpass+"@tcp("+mysqlhost+":3306)/"+mysqldb+"?charset=utf8&loc=Asia%2FShanghai")
-	orm.RegisterModelWithPrefix("mfc_", new(Admin), new(Weight), new(User))
+	orm.RegisterModelWithPrefix("mfc_", new(Admin), new(Weight), new(User),new(Supply),new(Stockin),new(Stockout))
 }
