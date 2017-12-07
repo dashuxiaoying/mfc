@@ -1,18 +1,17 @@
 package models
 
 import (
-	_ "github.com/mattn/go-sqlite3"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/astaxie/beego/orm"
 )
 
 type Admin struct {
-	Id   int
-	User string
-	Pass string
+	Uid   int `orm:"auto;pk"`
+	Username string
+	Password string
 }
 
 func init() {
-	orm.RegisterDriver("sqlite3", orm.DRSqlite)
-	orm.RegisterDataBase("default", "sqlite3", "data.db")
+
 	orm.RegisterModel(new(Admin))
 }
